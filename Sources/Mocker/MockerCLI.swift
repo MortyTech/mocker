@@ -52,6 +52,7 @@ struct MockerCLI: AsyncParsableCommand {
             VolumeCommand.self,
             ComposeCommand.self,
             SystemCommand.self,
+            Completion.self,
             Proxy.self,
             Serve.self,
         ]

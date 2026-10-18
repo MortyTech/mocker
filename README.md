@@ -82,6 +82,41 @@ swift build -c release
 cp .build/release/mocker /usr/local/bin/mocker
 ```
 
+## Shell Completion
+
+Mocker ships completion scripts for bash, zsh and fish, with dynamic
+completion of container names, image references, volumes and networks.
+
+### zsh (macOS default)
+
+```sh
+mkdir -p ~/.zsh/completions
+mocker completion zsh > ~/.zsh/completions/_mocker
+echo 'fpath=(~/.zsh/completions $fpath)' >> ~/.zshrc
+echo 'autoload -Uz compinit && compinit' >> ~/.zshrc
+```
+
+### bash
+
+```sh
+# Homebrew bash-completion
+mkdir -p $(brew --prefix)/etc/bash_completion.d
+mocker completion bash > $(brew --prefix)/etc/bash_completion.d/mocker
+
+# or user-local (bash-completion >= 1.99)
+mkdir -p ~/.local/share/bash-completion/completions
+mocker completion bash > ~/.local/share/bash-completion/completions/mocker
+```
+
+### fish
+
+```sh
+mkdir -p ~/.config/fish/completions
+mocker completion fish > ~/.config/fish/completions/mocker.fish
+```
+
+Installations via Homebrew get all three installed automatically.
+
 ## Quick Start
 
 ```bash
