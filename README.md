@@ -87,10 +87,11 @@ cp .build/release/mocker /usr/local/bin/mocker
 ```sh
 # zsh: then add `fpath=(~/.zsh/completions $fpath)` before `compinit` in ~/.zshrc
 mkdir -p ~/.zsh/completions && mocker completion zsh > ~/.zsh/completions/_mocker
-# bash (bash-completion 2)
+# bash (bash-completion 2, e.g. `brew install bash-completion@2`)
+mkdir -p ~/.local/share/bash-completion/completions
 mocker completion bash > ~/.local/share/bash-completion/completions/mocker
 # fish
-mocker completion fish > ~/.config/fish/completions/mocker.fish
+mkdir -p ~/.config/fish/completions && mocker completion fish > ~/.config/fish/completions/mocker.fish
 ```
 
 ## Quick Start

@@ -63,15 +63,14 @@ swift run mocker --help
 
 Generate completion scripts for your shell:
 
-```bash
-# Bash
-mocker --generate-completion-script bash >> ~/.bashrc
-
-# Zsh
-mocker --generate-completion-script zsh >> ~/.zshrc
-
-# Fish
-mocker --generate-completion-script fish > ~/.config/fish/completions/mocker.fish
+```sh
+# zsh: then add `fpath=(~/.zsh/completions $fpath)` before `compinit` in ~/.zshrc
+mkdir -p ~/.zsh/completions && mocker completion zsh > ~/.zsh/completions/_mocker
+# bash (bash-completion 2, e.g. `brew install bash-completion@2`)
+mkdir -p ~/.local/share/bash-completion/completions
+mocker completion bash > ~/.local/share/bash-completion/completions/mocker
+# fish
+mkdir -p ~/.config/fish/completions && mocker completion fish > ~/.config/fish/completions/mocker.fish
 ```
 
 ---
